@@ -113,3 +113,253 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* { margin: 0; padding: 0; }
+
+body {
+    background: url("../images/green-background.jpg") no-repeat center 85%;
+    -webkit-transition: all 1.5s ease-out;
+    -moz-transition: all 1.5s ease-out;
+    -o-transition: all 1.5s ease-out;
+    -ms-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+}
+
+.winnerCat { background: url("../images/winnerCat.jpg") no-repeat center 15%; }
+.winnerDog { background: url("../images/winnerDog.jpg") no-repeat center 15%; }
+
+.pageWrapper {
+    position: relative;
+    top: 100px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+#center {
+    width: 304px;
+    margin: 0 auto;
+}
+
+.transparent {
+    display: none;
+    position: absolute;
+    left: 148px;
+    width: 304px;
+    height: 302px;
+}
+
+.cube {
+    width: 101px;
+    height: 100px;
+}
+
+.cube.zero:after { display: block; }
+.cube.cross:before { display: block; }
+
+.cube:before,
+.cube:after {
+    display: none;
+    position: absolute;
+    font-size: 70px;
+    padding: 9px 30px;
+    color: #fff;
+}
+
+.cube:before { content: '\2717'; }
+.cube:after { content: '\0BE6'; }
+
+.leftCube {
+    float: left;
+    border-right: 1px solid #fff;
+}
+
+.rightCube {
+    float: right;
+    border-left: 1px solid #fff;
+}
+
+.centerCube {
+    margin-left: 102px;
+}
+
+.cube:nth-child(4),
+.cube:nth-child(5),
+.cube:nth-child(6) {
+    border-top: 1px solid #fff; border-bottom: 1px solid #fff;
+}
+
+#button {
+    position: absolute;
+    left: 29px;
+    top: 43px;
+    width: 54px;
+    height: 54px;
+    color: #000;
+    border-radius: 50%;
+    border: 1px solid #FFED23;
+    background-color: #FFED23;
+    font: normal 14px Century Gothic;
+}
+#button:focus { outline: none; }
+#button:hover { cursor: pointer; }
+
+.wrapPetal {
+    position: relative;
+    width: 120px;
+    height: 140px;
+    -webkit-transition: -webkit-transform 1.5s ease-out;
+    -moz-transition: -moz-transform 1.5s ease-out;
+    -ms-transition: -ms-transform 1.5s ease-out;
+    -o-transition: -o-transform 1.5s ease-out;
+    transition: transform 1.5s ease-out;
+}
+
+.petal {
+    width: 108px;
+    height: 30px;
+    top: 55px;
+    right: 9px;
+    -webkit-transition: background-color 1.5s ease-out;
+    -moz-transition: background-color 1.5s ease-out;
+    -ms-transition: background-color 1.5s ease-out;
+    -o-transition: background-color 1.5s ease-out;
+    transition: background-color 1.5s ease-out;
+}
+
+.petal,
+.petal:before,
+.petal:after {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.petal:before,
+.petal:after {
+    content: '';
+    width: 36px;
+    height: 90px;
+    right: 37px;
+    top: -30px;
+    -webkit-transition: background-color 1.5s ease-out;
+    -moz-transition: background-color 1.5s ease-out;
+    -ms-transition: background-color 1.5s ease-out;
+    -o-transition: background-color 1.5s ease-out;
+    transition: background-color 1.5s ease-out;
+}
+
+.petal:before {
+    -webkit-transform: skewX(-27deg);
+    -moz-transform: skewX(-27deg);
+    -ms-transform: skewX(-27deg);
+    -o-transform: skewX(-27deg);
+    transform: skewX(-27deg);
+}
+.petal:after {
+    -webkit-transform: skewX(27deg);
+    -moz-transform: skewX(27deg);
+    -ms-transform: skewX(27deg);
+    -o-transform: skewX(27deg);
+    transform: skewX(27deg);
+}
+
+.whiteFlower,
+.whiteFlower:before,
+.whiteFlower:after {
+    background-color: #fff;
+}
+
+.redFlower,
+.redFlower:before,
+.redFlower:after {
+    background-color: #FF0000;
+}
+
+.rollingFlower {
+    -webkit-transform: translateX(480px) rotateZ(360deg);
+    -moz-transform: translateX(480px) rotateZ(360deg);
+    -ms-transform: translateX(480px) rotateZ(360deg);
+    -o-transform: translateX(480px) rotateZ(360deg);
+    transform: translateX(480px) rotateZ(360deg);
+}
+
+.message {
+    position: fixed;
+    top: 410px;
+    left: 190px;
+    width: 220px;
+    height: 100px;
+    background-color: rgba(240, 232, 232, 0.48);
+    z-index: 100;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.52);
+}
+
+#crossIsWinner, #knotIsWinner { display: none; }
+
+.message p {
+    text-align: center;
+    padding: 20px 0;
+    font: normal 16px "Century Gothic";
+    color: #000;
+}
+
+.message button {
+    position: relative;
+    left: 86px;
+    bottom: 5px;
+    width: 48px;
+    height: 30px;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #A29C9C;
+    font-family: Century Gothic;
+}
+.message button:hover { border: 1px solid #908A8A; }
+
+
+
+
+
+
+
+
+

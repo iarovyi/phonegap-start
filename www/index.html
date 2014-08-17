@@ -30,14 +30,37 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
+        <!--<div class="app">
+            <h1>My Application</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
+        </div>-->
+
+        <div class="app">
+            <div class="pageWrapper">
+                <div class="transparent"></div>
+                <div id="center"></div>
+                <div class="message" id="crossIsWinner">
+                    <p>Cross is winner!</p>
+                    <button type="button">Ok</button>
+                </div>
+                <div class="message" id="knotIsWinner">
+                    <p>Knot is winner!</p>
+                    <button type="button">Ok</button>
+                </div>
+
+                <div class="wrapPetal">
+                    <div class="petal whiteFlower"></div>
+                    <button id="button" type="button">Again</button>
+                </div>
+            </div>
         </div>
+
+
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
